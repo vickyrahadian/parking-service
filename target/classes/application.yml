@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/parking_db
+    username: parking-user-db
+    password: P@s5w0rd
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+  application:
+    name: parking-system
+
+app:
+  parking:
+    hourly-rate: 5
