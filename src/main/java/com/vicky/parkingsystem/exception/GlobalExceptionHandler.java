@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex, WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(
-                "An unexpected error occurred",
+                "An unexpected error occurred : " + ex.getMessage(),
                 request.getDescription(false),
                 LocalDateTime.now()
         );
