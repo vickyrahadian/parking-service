@@ -1,0 +1,4 @@
+export DB_USERNAME="parking-user-db"
+export DB_PASSWORD="P@s5w0rd"
+export DB_HOST="localhost"
+export DB_PORT="5432"

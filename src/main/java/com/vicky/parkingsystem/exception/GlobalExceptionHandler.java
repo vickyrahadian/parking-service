@@ -50,7 +50,7 @@ public class GlobalExceptionHandler {
         log.error("Unexpected error: {}", ex.getMessage(), ex);
 
         ErrorResponse errorResponse = new ErrorResponse(
-                "An unexpected error occurred : " + ex.getMessage(),
+                "An unexpected error occurred",
                 request.getDescription(false),
                 LocalDateTime.now()
         );

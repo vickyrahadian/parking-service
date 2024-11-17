@@ -1,20 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/parking_db
-    username: parking-user-db
-    password: P@s5w0rd
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
     properties:
-      hibernate:
-        format_sql: true
-  sql:
-    init:
-      mode: always
-  application:
-    name: parking-system
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
 app:
   parking:
