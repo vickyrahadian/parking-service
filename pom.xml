@@ -28,6 +28,8 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<sonar.projectKey>squ_c48499ee9d1e0c29344f6676f7f82064032eb39d</sonar.projectKey>
+		<sonar.host.url>https://8564-2603-7000-7600-122a-a852-a7fa-f8e7-59a6.ngrok-free.app</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,6 +60,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -74,6 +77,13 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version>
+			</plugin>
+
 		</plugins>
 	</build>
 
