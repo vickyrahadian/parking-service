@@ -3,25 +3,25 @@ name: SonarQube Code Scan
 on:
   push:
     branches:
-      - main  # Trigger workflow on push to the main branch
+      - main
 
 jobs:
   sonar-scan:
-    runs-on: ubuntu-latest  # Use a Linux runner
-    
+    runs-on: ubuntu-latest
+
     steps:
       # Step 1: Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Java (required for Maven builds)
+      # Step 2: Set up Java
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'  # Choose JDK distribution
-          java-version: '21'       # Set the Java version
+          distribution: 'temurin'
+          java-version: '21'
 
-      # Step 3: Cache Maven dependencies for faster builds
+      # Step 3: Cache Maven dependencies
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
@@ -30,14 +30,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      # Step 4: Run SonarQube analysis
-#      - name: SonarQube Scan
-#        run: mvn sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-
+      # Step 4: Run Tests with Coverage
       - name: Run Tests with Coverage
         run: mvn clean verify
 
+      # Step 5: Run SonarQube Scan with Coverage
       - name: Upload JaCoCo Coverage to SonarQube
         run: mvn sonar:sonar \
-              -Dsonar.host.url=https://dfff-2603-7000-7600-122a-4106-928-c9cf-db4a.ngrok-free.app \
-              -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.host.url=https://your-sonarqube-server-url \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
