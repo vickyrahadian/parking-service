@@ -39,5 +39,5 @@ jobs:
 
       - name: Upload JaCoCo Coverage to SonarQube
         run: mvn sonar:sonar \
-              -Dsonar.host.url=https://8564-2603-7000-7600-122a-a852-a7fa-f8e7-59a6.ngrok-free.app \
+              -Dsonar.host.url=https://dfff-2603-7000-7600-122a-4106-928-c9cf-db4a.ngrok-free.app \
               -Dsonar.login=${{ secrets.SONAR_TOKEN }}
