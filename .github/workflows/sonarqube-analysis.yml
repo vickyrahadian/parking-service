@@ -31,5 +31,13 @@ jobs:
             ${{ runner.os }}-maven-
 
       # Step 4: Run SonarQube analysis
-      - name: SonarQube Scan
-        run: mvn sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+#      - name: SonarQube Scan
+#        run: mvn sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+      - name: Run Tests with Coverage
+        run: mvn clean verify
+
+      - name: Upload JaCoCo Coverage to SonarQube
+        run: mvn sonar:sonar \
+              -Dsonar.host.url=https://8564-2603-7000-7600-122a-a852-a7fa-f8e7-59a6.ngrok-free.app \
+              -Dsonar.login=${{ secrets.SONAR_TOKEN }}
