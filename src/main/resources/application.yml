@@ -15,4 +15,4 @@ server:
 
 app:
   parking:
-    hourly-rate: 5
+    hourly-rate: 10

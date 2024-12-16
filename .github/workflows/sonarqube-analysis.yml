@@ -37,5 +37,5 @@ jobs:
       # Step 5: Run SonarQube Scan with Coverage
       - name: Upload JaCoCo Coverage to SonarQube
         run: mvn sonar:sonar \
-          -Dsonar.host.url=https://your-sonarqube-server-url \
+          -Dsonar.host.url=http://server.kode19.com:9000 \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
