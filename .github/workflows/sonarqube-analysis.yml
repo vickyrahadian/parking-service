@@ -41,8 +41,9 @@ jobs:
           DB_URL: ${{ secrets.DB_URL }}
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-        run: mvn clean verify sonar:sonar \
-          -Dsonar.projectKey=parking-service-local \
-          -Dsonar.projectName="parking-service-local" \
-          -Dsonar.host.url="http://server.kode19.com:9000" \
-          -Dsonar.login=$SONAR_TOKEN
+        run: |
+          mvn clean verify sonar:sonar \
+            -Dsonar.projectKey=parking-service-local \
+            -Dsonar.projectName="parking-service-local" \
+            -Dsonar.host.url="http://server.kode19.com:9000" \
+            -Dsonar.login=$SONAR_TOKEN
