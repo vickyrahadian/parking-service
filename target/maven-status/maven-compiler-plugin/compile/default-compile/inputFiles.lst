@@ -1,4 +1,5 @@
 /Users/vicky/Library/CloudStorage/OneDrive-Personal/data/workspace/parking-system/src/main/java/com/vicky/parkingsystem/ParkingSystemApplication.java
+/Users/vicky/Library/CloudStorage/OneDrive-Personal/data/workspace/parking-system/src/main/java/com/vicky/parkingsystem/config/OpenAPIConfig.java
 /Users/vicky/Library/CloudStorage/OneDrive-Personal/data/workspace/parking-system/src/main/java/com/vicky/parkingsystem/controller/ParkingController.java
 /Users/vicky/Library/CloudStorage/OneDrive-Personal/data/workspace/parking-system/src/main/java/com/vicky/parkingsystem/dto/EntryRequestDTO.java
 /Users/vicky/Library/CloudStorage/OneDrive-Personal/data/workspace/parking-system/src/main/java/com/vicky/parkingsystem/dto/EntryResponseDTO.java

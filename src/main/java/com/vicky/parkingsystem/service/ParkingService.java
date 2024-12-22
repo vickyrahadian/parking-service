@@ -6,6 +6,7 @@ import com.vicky.parkingsystem.model.Vehicle;
 import com.vicky.parkingsystem.repository.ParkingRepository;
 import com.vicky.parkingsystem.repository.VehicleRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class ParkingService {
     private final VehicleRepository vehicleRepository;
     private final ParkingRepository parkingRepository;
 
+    @Setter
     @Value("${app.parking.hourly-rate}")
     private double hourlyRate;
 

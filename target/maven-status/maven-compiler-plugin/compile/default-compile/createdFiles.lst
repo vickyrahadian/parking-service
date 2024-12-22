@@ -1,5 +1,6 @@
 com/vicky/parkingsystem/dto/ErrorResponse.class
 com/vicky/parkingsystem/dto/ParkingFeeResponseDTO.class
+com/vicky/parkingsystem/config/OpenAPIConfig.class
 com/vicky/parkingsystem/model/Vehicle.class
 com/vicky/parkingsystem/controller/ParkingController.class
 com/vicky/parkingsystem/dto/ExitRequestDTO.class

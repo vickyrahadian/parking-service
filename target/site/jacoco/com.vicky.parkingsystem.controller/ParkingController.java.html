@@ -5,28 +5,35 @@ import com.vicky.parkingsystem.dto.EntryResponseDTO;
 import com.vicky.parkingsystem.dto.ExitRequestDTO;
 import com.vicky.parkingsystem.dto.ParkingFeeResponseDTO;
 import com.vicky.parkingsystem.service.ParkingService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(&quot;/api/parking&quot;)
 @RequiredArgsConstructor
+@Tag(name = &quot;Parking Controller&quot;, description = &quot;Manage parking operations&quot;)
 public class ParkingController {
 
     private final ParkingService parkingService;
 
     @PostMapping(&quot;/entry&quot;)
+    @Operation(summary = &quot;Register vehicle entry&quot;, description = &quot;Registers a vehicle entering the parking lot&quot;)
     public ResponseEntity&lt;EntryResponseDTO&gt; enterParking(@Valid @RequestBody EntryRequestDTO request) {
-<span class="nc" id="L22">        EntryResponseDTO response = parkingService.enterParking(request);</span>
-<span class="nc" id="L23">        return ResponseEntity.ok(response);</span>
+<span class="fc" id="L28">        EntryResponseDTO response = parkingService.enterParking(request);</span>
+<span class="fc" id="L29">        return ResponseEntity.ok(response);</span>
     }
 
     @PostMapping(&quot;/exit&quot;)
+    @Operation(summary = &quot;Register vehicle exit&quot;, description = &quot;Registers a vehicle exiting the parking lot and calculates the fee&quot;)
     public ResponseEntity&lt;ParkingFeeResponseDTO&gt; exitParking(@Valid @RequestBody ExitRequestDTO request) {
-<span class="nc" id="L28">        ParkingFeeResponseDTO response = parkingService.exitParking(request);</span>
-<span class="nc" id="L29">        return ResponseEntity.ok(response);</span>
+<span class="fc" id="L35">        ParkingFeeResponseDTO response = parkingService.exitParking(request);</span>
+<span class="fc" id="L36">        return ResponseEntity.ok(response);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

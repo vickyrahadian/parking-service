@@ -1,5 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-parking-system,com.vicky.parkingsystem.service,ParkingService,201,4,2,0,39,1,6,1,5,1
-parking-system,com.vicky.parkingsystem.exception,GlobalExceptionHandler,81,7,2,0,18,2,4,2,3,2
-parking-system,com.vicky.parkingsystem.controller,ParkingController,16,0,0,0,4,0,2,0,2,0
-parking-system,com.vicky.parkingsystem,ParkingSystemApplication,5,3,0,0,2,1,1,1,1,1
+parking-system,com.vicky.parkingsystem.service,ParkingService,0,205,0,2,0,40,0,7,0,6
+parking-system,com.vicky.parkingsystem.exception,GlobalExceptionHandler,0,88,0,2,0,20,0,6,0,5
+parking-system,com.vicky.parkingsystem.controller,ParkingController,0,16,0,0,0,4,0,2,0,2
+parking-system,com.vicky.parkingsystem.config,OpenAPIConfig,0,17,0,0,0,6,0,2,0,2
+parking-system,com.vicky.parkingsystem,ParkingSystemApplication,0,8,0,0,0,3,0,2,0,2

@@ -1,42 +1,42 @@
-name: SonarQube Code Scan
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  sonar-scan:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Step 1: Checkout the code
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      # Step 2: Set up Java
-      - name: Set up JDK 21
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      # Step 3: Cache Maven dependencies
-      - name: Cache Maven dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      # Step 4: Run Tests with Coverage
-      - name: Run Tests with Coverage
-        run: mvn clean verify
-
-      # Step 5: Run SonarQube Scan with Coverage
-      - name: Upload JaCoCo Coverage to SonarQube
-        run: mvn sonar:sonar \
-          -Dsonar.host.url=http://server.kode19.com:9000 \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-
+#name: SonarQube Code Scan
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  sonar-scan:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      # Step 1: Checkout the code
+#      - name: Checkout Code
+#        uses: actions/checkout@v3
+#
+#      # Step 2: Set up Java
+#      - name: Set up JDK 21
+#        uses: actions/setup-java@v3
+#        with:
+#          distribution: 'temurin'
+#          java-version: '21'
+#
+#      # Step 3: Cache Maven dependencies
+#      - name: Cache Maven dependencies
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.m2
+#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
+#
+#      # Step 4: Run Tests with Coverage
+#      - name: Run Tests with Coverage
+#        run: mvn clean verify
+#
+#      # Step 5: Run SonarQube Scan with Coverage
+#      - name: Upload JaCoCo Coverage to SonarQube
+#        run: mvn sonar:sonar \
+#          -Dsonar.host.url=http://server.kode19.com:9000 \
+#          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+#

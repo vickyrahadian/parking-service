@@ -23,40 +23,40 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
     // Handle IllegalArgumentException for custom validation errors
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity&lt;ErrorResponse&gt; handleIllegalArgumentException(IllegalArgumentException ex, WebRequest request) {
-<span class="nc" id="L26">        log.warn(&quot;IllegalArgumentException: {}&quot;, ex.getMessage());</span>
+<span class="fc" id="L26">        log.warn(&quot;IllegalArgumentException: {}&quot;, ex.getMessage());</span>
 
-<span class="nc" id="L28">        ErrorResponse errorResponse = new ErrorResponse(</span>
-<span class="nc" id="L29">                ex.getMessage(),</span>
-<span class="nc" id="L30">                request.getDescription(false),</span>
-<span class="nc" id="L31">                LocalDateTime.now()</span>
+<span class="fc" id="L28">        ErrorResponse errorResponse = new ErrorResponse(</span>
+<span class="fc" id="L29">                ex.getMessage(),</span>
+<span class="fc" id="L30">                request.getDescription(false),</span>
+<span class="fc" id="L31">                LocalDateTime.now()</span>
         );
-<span class="nc" id="L33">        return new ResponseEntity&lt;&gt;(errorResponse, BAD_REQUEST);</span>
+<span class="fc" id="L33">        return new ResponseEntity&lt;&gt;(errorResponse, BAD_REQUEST);</span>
     }
 
     // Handle validation errors vor invalid DTOs
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity&lt;Map&lt;String, String&gt;&gt; handleValidationExceptions(MethodArgumentNotValidException ex) {
-<span class="nc" id="L39">        log.warn(&quot;MethodArgumentNotValidException: {}&quot;, ex.getMessage());</span>
+<span class="fc" id="L39">        log.warn(&quot;MethodArgumentNotValidException: {}&quot;, ex.getMessage());</span>
 
-<span class="nc" id="L41">        Map&lt;String, String&gt; errors = new HashMap&lt;&gt;();</span>
-<span class="nc bnc" id="L42" title="All 2 branches missed.">        for (FieldError error : ex.getBindingResult().getFieldErrors()) {</span>
-<span class="nc" id="L43">            errors.put(error.getField(), error.getDefaultMessage());</span>
-<span class="nc" id="L44">        }</span>
-<span class="nc" id="L45">        log.warn(&quot;Validation failed for request: {}&quot;, errors);</span>
-<span class="nc" id="L46">        return new ResponseEntity&lt;&gt;(errors, BAD_REQUEST);</span>
+<span class="fc" id="L41">        Map&lt;String, String&gt; errors = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        for (FieldError error : ex.getBindingResult().getFieldErrors()) {</span>
+<span class="fc" id="L43">            errors.put(error.getField(), error.getDefaultMessage());</span>
+<span class="fc" id="L44">        }</span>
+<span class="fc" id="L45">        log.warn(&quot;Validation failed for request: {}&quot;, errors);</span>
+<span class="fc" id="L46">        return new ResponseEntity&lt;&gt;(errors, BAD_REQUEST);</span>
     }
 
     // Handle other generic exceptions
     @ExceptionHandler(Exception.class)
     public ResponseEntity&lt;ErrorResponse&gt; handleGlobalException(Exception ex, WebRequest request) {
-<span class="nc" id="L52">        log.error(&quot;Unexpected error: {}&quot;, ex.getMessage(), ex);</span>
+<span class="fc" id="L52">        log.error(&quot;Unexpected error: {}&quot;, ex.getMessage(), ex);</span>
 
-<span class="nc" id="L54">        ErrorResponse errorResponse = new ErrorResponse(</span>
+<span class="fc" id="L54">        ErrorResponse errorResponse = new ErrorResponse(</span>
                 &quot;An unexpected error occurred&quot;,
-<span class="nc" id="L56">                request.getDescription(false),</span>
-<span class="nc" id="L57">                LocalDateTime.now()</span>
+<span class="fc" id="L56">                request.getDescription(false),</span>
+<span class="fc" id="L57">                LocalDateTime.now()</span>
         );
-<span class="nc" id="L59">        return new ResponseEntity&lt;&gt;(errorResponse, INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L59">        return new ResponseEntity&lt;&gt;(errorResponse, INTERNAL_SERVER_ERROR);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
