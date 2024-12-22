@@ -39,3 +39,4 @@ jobs:
         run: mvn sonar:sonar \
           -Dsonar.host.url=http://server.kode19.com:9000 \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
