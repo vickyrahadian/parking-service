@@ -31,13 +31,16 @@ jobs:
             ${{ runner.os }}-maven-
 
       # Step 4: Run Tests with Coverage
-      - name: Run Tests with Coverage
-        run: mvn clean verify
+#      - name: Run Tests with Coverage
+#        run: mvn clean verify
 
       # Step 5: Run SonarQube Scan with Coverage
       - name: Upload JaCoCo Coverage to SonarQube
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          DB_URL: ${{ secrets.DB_URL }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: mvn clean verify sonar:sonar \
           -Dsonar.projectKey=parking-service-local \
           -Dsonar.projectName="parking-service-local" \
