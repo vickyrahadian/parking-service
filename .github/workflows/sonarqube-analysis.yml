@@ -34,6 +34,9 @@ jobs:
 #      - name: Run Tests with Coverage
 #        run: mvn clean verify
 
+      - name: Test SonarQube Server Connectivity
+        run: curl -v http://server.kode19.com:9000
+
       # Step 5: Run SonarQube Scan with Coverage
       - name: Upload JaCoCo Coverage to SonarQube
         env:
