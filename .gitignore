@@ -36,6 +36,7 @@ replay_pid*
 
 # Maven specific
 target/
+target/*
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -47,7 +48,6 @@ release.properties
 build/
 !gradle-wrapper.jar
 .gradle/
-build/
 out/
 
 # Eclipse specific files
@@ -65,6 +65,5 @@ Thumbs.db
 *notes*
 *.tmp
 *.bak
-*.swp
 *.old
 *.orig
