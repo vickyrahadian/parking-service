@@ -1,4 +1,1 @@
-com/vicky/parkingsystem/exception/GlobalExceptionHandlerControllerTest.class
-com/vicky/parkingsystem/controller/ParkingControllerTest.class
-com/vicky/parkingsystem/ParkingSystemApplicationTest.class
-com/vicky/parkingsystem/service/ParkingServiceTest.class
+com\vicky\parkingsystem\ParkingSystemApplicationTests.class
