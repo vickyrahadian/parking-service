@@ -49,4 +49,4 @@ jobs:
             -Dsonar.projectKey=parking-service-local \
             -Dsonar.projectName="parking-service-local" \
             -Dsonar.host.url="http://server.kode19.com:9000" \
-            -Dsonar.login=$SONAR_TOKEN
+            -Dsonar.token=$SONAR_TOKEN
