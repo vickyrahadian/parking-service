@@ -30,13 +30,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      # Step 4: Run Tests with Coverage
-#      - name: Run Tests with Coverage
-#        run: mvn clean verify
-
-#      - name: Test SonarQube Server Connectivity
-#        run: curl -v http://34.41.172.81:9000
-
       # Step 5: Run SonarQube Scan with Coverage
       - name: Upload JaCoCo Coverage to SonarQube
         env:
